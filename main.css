@@ -1,0 +1,56 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #07252d;
+}
+
+header p {
+  position: relative;
+  font-family: Arial;
+  font-size: 70px;
+  Letter-spacing: 15px;
+  color: #0e3742;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.5333333333));
+  line-height: 0.7em;
+  -webkit-animation: animate 5s linear infinite;
+          animation: animate 5s linear infinite;
+}
+@-webkit-keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, ee 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
+}
+@keyframes animate {
+  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, ee 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
