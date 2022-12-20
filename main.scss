@@ -1,5 +1,7 @@
 // Description: Main Sass file for the theme
 
+// for placeholders
+
 // Import media queries
 @use "sass/media" as *;
 
@@ -130,6 +132,9 @@ header{
 section {
     text-align: center;
     margin-top: 50px;
+    @include breakpoints(mobile){
+        margin-top: 30px;
+    }
     .valid-input{
         color: red;
         margin-top: 10px;
@@ -137,6 +142,83 @@ section {
         display: none;
     }
     
+}
+
+// stepper
+.progress-bar{
+    position: relative;
+    width: 500px;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    @include breakpoints(mobile){
+        width: 350px;
+    }
+    .stepper{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgb(85, 77, 77);
+        }
+        .step{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+            .step-item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                background-color: #0e3742;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                transition: .5s;
+                &:hover{
+                    background-color: #03bcf4;
+                }
+            }
+        }
+    }
+}
+.step-item-active{
+    background-color: #03bcf4 !important;
+}
+
+.info{
+    margin-top: 100px;
+    width: 100%;
+    @include breakpoints(mobile){
+        margin-top: 40px;
+    }
+    .info_list{
+        padding: 20px;
+        width: fit-content;
+        background-color: black;
+        margin: {
+            left: auto;
+            right: auto;
+        };
+
+        
+        div{
+            color: #777580;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
 }
 
 

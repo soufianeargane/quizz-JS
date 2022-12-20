@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <title>quizz</title>
 </head>
 <body>
@@ -19,6 +20,48 @@
         </div>
         <p class="valid-input">* Please type your name</p>
     </section>
+    <!-- Info And Rules -->
+    <!-- Stepper progress bar -->
+    <div class="progress-bar">
+        <div class="stepper">
+            <div class="step">
+                <div class="step-item step-item-active">
+                    <span id="rules">1</span>
+                </div>
+                <div class="step-title">
+                    <p>Rules</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-item">
+                    <span id="quiz">2</span>
+                </div>
+                <div class="step-title">
+                    <p>Quiz</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-item">
+                    <span>3</span>
+                </div>
+                <div class="step-title">
+                    <p>Result</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="info_list">
+            
+                <div>1.You will have only <span>30</span>  seconds per each question.</div>
+                <div>2.Once you select your answer, you can't reselect.</div>
+                <div>3.You can't select any option once time goes off.</div>
+                <div>4.You can't exit from the Quiz while you're playing.</div>
+                <div>5.You'll get points on the basis of your correct answers.</div>
+                <button onclick="check()" id="accept">accept</button>
+            
+        </div>
+    </div>
     <!-- javascript -->
     <script src="./script.js"></script>
 </body>

@@ -18,6 +18,14 @@ function changeName(){
         button.style.display = "none";
         validate.style.display = "none";
     }
-
-
+} 
+//accepting rules
+// const accept = document.getElementById("accept");
+// adding the check icon
+function check(){
+    let rules = document.getElementById("rules");
+    rules.innerHTML = `<i class="bi bi-check-circle"></i>`;
+    document.querySelector('.info_list').style.display = "none";
+    let spans = document.querySelectorAll('.step-item');
+    spans[1].classList.add('step-item-active');
 }
