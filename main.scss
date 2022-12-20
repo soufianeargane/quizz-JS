@@ -1,3 +1,8 @@
+// Description: Main Sass file for the theme
+
+// Import media queries
+@use "sass/media" as *;
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -8,7 +13,12 @@ body{
 }
 
 header{
-    p{
+    .title{
+        padding: {
+            top: 60px;
+            left: 20px;
+            right: 20px;
+        }
         position: relative;
         font-family: Arial;
         font-size: 70px;
@@ -18,30 +28,115 @@ header{
         -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
         line-height: 0.70em;
         animation: animate 5s linear infinite;
-    }
-    @keyframes animate {
-        0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
-        {
-            color: #0e3742;
-            text-shadow: none;
+        @keyframes animate {
+            0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
+            {
+                color: #0e3742;
+                text-shadow: none;
+            }
+            18.1%, 20.1%, 30%, 50%, 60.1%,65%, 80.1%, 90%, 92.1%, 100%
+            {
+                color: #fff;
+                text-shadow:0 0 10px #03bcf4,
+                0 0 20px #03bcf4,
+                0 0 40px #03bcf4,
+                ee 0 80px #03bcf4,
+                0 0 160px #03bcf4;
+            }
         }
-        18.1%, 20.1%, 30%, 50%, 60.1%,65%, 80.1%, 90%, 92.1%, 100%
-        {
-            color: #fff;
-            text-shadow:0 0 10px #03bcf4,
-            0 0 20px #03bcf4,
-            0 0 40px #03bcf4,
-            ee 0 80px #03bcf4,
-            0 0 160px #03bcf4;
+        @include breakpoints(mobile){
+            font-weight: bold;
+            font-size: 27px;
+            Letter-spacing: 4px;
+            padding: {
+                left: 0px;
+                right: 0px;
+            }
+        }
+        @include breakpoints(small){
+            font-weight: 600;
+            font-size: 35px;
+            Letter-spacing: 6px;
+            padding: {
+                left: 10px;
+                right: 10px;
+            }
+        }
+        @include breakpoints(medium){
+            font-weight: 500;
+            font-size: 55px;
+            Letter-spacing: 8px;
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+        }
+    }
+    .welcome{
+        padding: {
+            top: 60px;
+        }
+        font-family: Arial;
+        text-transform: uppercase;
+        font-family: Arial;
+        line-height: 0.7em;
+        color: #0e3742;
+        text-align: center;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+        line-height: 0.70em;
+        animation: animate 5s linear infinite;
+    }
+    .welcome{
+        @include breakpoints(mobile){
+            
+            font-weight: 900;
+            font-size: 30px;
+            Letter-spacing: 6px;
+            padding: {
+                left: 0px;
+                right: 0px;
+            }
+        }
+        @include breakpoints(small){
+            font-weight: 700;
+            font-size: 45px;
+            Letter-spacing: 10px;
+            padding: {
+                left: 10px;
+                right: 10px;
+            }
+        }
+        @include breakpoints(medium){
+            font-weight: 600;
+            font-size: 52px;
+            Letter-spacing: 13px;
+            padding: {
+                left: 15px;
+                right: 15px;
+            }
+        }
+        @include breakpoints(large){
+            font-weight: 400;
+            font-size: 70px;
+            Letter-spacing: 16px;
+            padding: {
+                left: 20px;
+                right: 20px;
+            }
         }
     }
 }
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-        margin-top: 50px;
+    text-align: center;
+    margin-top: 50px;
+    .valid-input{
+        color: red;
+        margin-top: 10px;
+        font-size: 20px;
+        display: none;
+    }
     
 }
+
+

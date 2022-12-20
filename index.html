@@ -9,11 +9,15 @@
 </head>
 <body>
     <header>
-        <p id="title">Welcome to the Quizz</p>
+        <p class="title" id="title">Welcome to the Quizz</p>
+        <p class="welcome"></p>
     </header>
     <section>
-        <input id="user-name" type="text">
-        <button onclick="changeName()" id="submit-name">submit</button>
+        <div>
+            <input id="name-input" type="text" >
+            <button onclick="changeName()" id="submit-name">submit</button>
+        </div>
+        <p class="valid-input">* Please type your name</p>
     </section>
     <!-- javascript -->
     <script src="./script.js"></script>

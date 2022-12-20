@@ -9,7 +9,10 @@ body {
   background-color: #07252d;
 }
 
-header p {
+header .title {
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
   font-family: Arial;
   font-size: 70px;
@@ -41,16 +44,90 @@ header p {
     text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, ee 0 80px #03bcf4, 0 0 160px #03bcf4;
   }
 }
+@media (max-width: 575px) {
+  header .title {
+    font-weight: bold;
+    font-size: 27px;
+    Letter-spacing: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .title {
+    font-weight: 600;
+    font-size: 35px;
+    Letter-spacing: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .title {
+    font-weight: 500;
+    font-size: 55px;
+    Letter-spacing: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+header .welcome {
+  padding-top: 60px;
+  font-family: Arial;
+  text-transform: uppercase;
+  font-family: Arial;
+  line-height: 0.7em;
+  color: #0e3742;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.5333333333));
+  line-height: 0.7em;
+  -webkit-animation: animate 5s linear infinite;
+          animation: animate 5s linear infinite;
+}
+@media (max-width: 575px) {
+  header .welcome {
+    font-weight: 900;
+    font-size: 30px;
+    Letter-spacing: 6px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .welcome {
+    font-weight: 700;
+    font-size: 45px;
+    Letter-spacing: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .welcome {
+    font-weight: 600;
+    font-size: 52px;
+    Letter-spacing: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 992px) {
+  header .welcome {
+    font-weight: 400;
+    font-size: 70px;
+    Letter-spacing: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
   margin-top: 50px;
+}
+section .valid-input {
+  color: red;
+  margin-top: 10px;
+  font-size: 20px;
+  display: none;
 }
