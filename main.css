@@ -120,6 +120,46 @@ header .welcome {
     padding-right: 20px;
   }
 }
+header .good-luck {
+  display: none;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  font-family: Arial;
+  font-size: 70px;
+  Letter-spacing: 15px;
+  color: white;
+  text-align: center;
+  line-height: 0.7em;
+}
+@media (max-width: 575px) {
+  header .good-luck {
+    font-weight: bold;
+    font-size: 27px;
+    Letter-spacing: 4px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  header .good-luck {
+    font-weight: 600;
+    font-size: 35px;
+    Letter-spacing: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header .good-luck {
+    font-weight: 500;
+    font-size: 55px;
+    Letter-spacing: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 
 section {
   text-align: center;
@@ -138,6 +178,7 @@ section .valid-input {
 }
 
 .progress-bar {
+  display: none;
   position: relative;
   width: 500px;
   margin-left: auto;
@@ -220,6 +261,7 @@ section .valid-input {
   }
 }
 .info .info_list {
+  display: none;
   padding: 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
