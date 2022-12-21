@@ -240,10 +240,10 @@ section {
 }
 
 .info{
-    margin-top: 100px;
+    margin-top: 20px;
     width: 100%;
     @include breakpoints(mobile){
-        margin-top: 40px;
+        margin-top: 10px;
     }
     .info_list{
         display: none;
@@ -263,6 +263,72 @@ section {
             font-weight: 700;
         }
     }
+    .quiz-app{
+        padding: 20px;
+        background-color: #f8f8f8;
+        width: 50%;
+        @include breakpoints(mobile){
+            width: 90%;
+        }
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        .quiz-info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .quiz{
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 15px;
+        }
+        .answers-area{
+            background-color: #fff;
+            padding: 0 20px 20px 20px;
+            .answer{
+                background-color: #f9f9f9;
+                padding: 15px;
+                display: flex;
+                // justify-content: space-between;
+                align-items: center;
+                &:not(:last-child){
+                    border-bottom: 1px solid #eaeaea;
+                }
+                input[type="radio"]:checked + label{
+                    color: #03bcf4;
+                }
+                label{
+                    cursor: pointer;
+                    padding: 0 5px;
+                    color: #777580;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .button-father{
+            display: flex;
+            .submit-answer{
+                background-color: #03bcf4;
+                width: 90%;
+                margin: 20px auto;
+                padding: 10px 15px;
+                border-radius: 5px;
+                color: #fff;
+                border: none;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    background-color: #3c8da5;
+                }
+            }
+        }
+        
+    }
 }
-
 

@@ -4,7 +4,7 @@
         "answer_1"      : "Amazon EC2 costs are billed on a monthly basis.",
         "answer_2"      : "Users retain full administrative access to their Amazon EC2 instances.",
         "answer_3"      : "Amazon EC2 instances can be launched on demand when needed.",
-        "answer_4"      : " Users can permanently run enough instances to handle peak workloads.",
+        "answer_4"      : "Users can permanently run enough instances to handle peak workloads.",
         "correct_answer": "Amazon EC2 instances can be launched on demand when needed."
     },
     
@@ -14,7 +14,7 @@
         "answer_2"      : "AWS Database Migration Service.",
         "answer_3"      : "Amazon EC2.",
         "answer_4"      : "Amazon AppStream 2.0.",
-        "correct_answer": "AWS Database Migration Service.."
+        "correct_answer": "AWS Database Migration Service."
     },
     
     {

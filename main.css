@@ -252,12 +252,12 @@ section .valid-input {
 }
 
 .info {
-  margin-top: 100px;
+  margin-top: 20px;
   width: 100%;
 }
 @media (max-width: 575px) {
   .info {
-    margin-top: 40px;
+    margin-top: 10px;
   }
 }
 .info .info_list {
@@ -275,4 +275,81 @@ section .valid-input {
   line-height: 30px;
   font-size: 20px;
   font-weight: 700;
+}
+.info .quiz-app {
+  padding: 20px;
+  background-color: #f8f8f8;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 575px) {
+  .info .quiz-app {
+    width: 90%;
+  }
+}
+.info .quiz-app .quiz-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+.info .quiz-app .quiz {
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 15px;
+}
+.info .quiz-app .answers-area {
+  background-color: #fff;
+  padding: 0 20px 20px 20px;
+}
+.info .quiz-app .answers-area .answer {
+  background-color: #f9f9f9;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.info .quiz-app .answers-area .answer:not(:last-child) {
+  border-bottom: 1px solid #eaeaea;
+}
+.info .quiz-app .answers-area .answer input[type=radio]:checked + label {
+  color: #03bcf4;
+}
+.info .quiz-app .answers-area .answer label {
+  cursor: pointer;
+  padding: 0 5px;
+  color: #777580;
+  font-size: 14px;
+  font-weight: bold;
+}
+.info .quiz-app .button-father {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.info .quiz-app .button-father .submit-answer {
+  background-color: #03bcf4;
+  width: 90%;
+  margin: 20px auto;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.info .quiz-app .button-father .submit-answer:hover {
+  background-color: #3c8da5;
 }

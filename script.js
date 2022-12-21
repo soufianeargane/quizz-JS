@@ -34,3 +34,22 @@ function check(){
     welcome.style.display= 'none';
     luck_P.style.display = 'block';
 }
+
+
+//fetch from JSON
+
+    // fetch(('./questions.json')).then((response) => {
+    //     let myData = response.json();
+    //     // console.log(myData);
+    //     return myData;
+    // }).then((data) => {
+    //     // console.log(data);
+    //     let questions = data;
+    //     console.log(questions);
+    //     return questions;
+    // });
+
+
+
+//fetch metjod
+
