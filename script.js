@@ -53,3 +53,19 @@ function check(){
 
 //fetch metjod
 
+function getQuestions(){
+    let myRequest = new XMLHttpRequest();
+    myRequest.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            // console.log(this.responseText);
+            let myData = JSON.parse(this.responseText);
+            console.log(myData);
+            // return myData;
+        }
+    };
+    myRequest.open('GET', './questions.json', true);
+    myRequest.send();
+}
+getQuestions();
+
+

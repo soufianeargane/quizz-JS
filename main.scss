@@ -328,6 +328,30 @@ section {
                 }
             }
         }
+        .bullets{
+            border-top: 1px solid #eaeaea;
+            background-color: #fff;
+            display: flex;
+            padding: 20px;
+            .spans{
+                display: flex;
+                flex: 1;
+                span{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: #c4c0c0;
+                    margin: 0 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+                .on{
+                    background-color: #03bcf4;
+                }
+            }
+        }
         
     }
 }
