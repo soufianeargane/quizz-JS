@@ -1,10 +1,10 @@
-const title = document.getElementById("title");
-const name = document.getElementById("name-input");
-const button = document.getElementById("submit-name");
-const welcome = document.querySelector(".welcome");
-const validate = document.querySelector(".valid-input");
-const progress_bar = document.querySelector(".progress-bar");
-const info_list = document.querySelector(".info_list");
+const title         = document.getElementById("title");
+const name          = document.getElementById("name-input");
+const button        = document.getElementById("submit-name");
+const welcome       = document.querySelector(".welcome");
+const validate      = document.querySelector(".valid-input");
+const progress_bar  = document.querySelector(".progress-bar");
+const info_list     = document.querySelector(".info_list");
 
 function changeName(){
     //validate the name and make sure the user has entered a name
@@ -35,32 +35,17 @@ function check(){
     luck_P.style.display = 'block';
 }
 
-
-//fetch from JSON
-
-    // fetch(('./questions.json')).then((response) => {
-    //     let myData = response.json();
-    //     // console.log(myData);
-    //     return myData;
-    // }).then((data) => {
-    //     // console.log(data);
-    //     let questions = data;
-    //     console.log(questions);
-    //     return questions;
-    // });
-
-
-
-//fetch metjod
-
 function getQuestions(){
     let myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             // console.log(this.responseText);
             let myData = JSON.parse(this.responseText);
-            console.log(myData);
-            // return myData;
+            let questionsCount = myData.length;
+            
+            //Create Bullets + set questions count
+            createBullets(questionsCount);
+
         }
     };
     myRequest.open('GET', './questions.json', true);
@@ -68,4 +53,18 @@ function getQuestions(){
 }
 getQuestions();
 
+let countSpan = document.getElementById('questions-num');
+let bulletsContainer = document.querySelector('.bullets .spans');
+function createBullets(num){
+    countSpan.innerHTML = num;
+
+    //create the bullets or spans
+    for(let i = 0; i < num; i++){
+        let bullet = document.createElement('span');
+        bulletsContainer.appendChild(bullet);
+        if(i == 0){
+            bullet.className = 'on';
+        }
+    }
+}
 
