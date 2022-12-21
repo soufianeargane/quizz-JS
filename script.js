@@ -35,6 +35,9 @@ function check(){
     luck_P.style.display = 'block';
 }
 
+//set Options
+let currentIndex = 0;
+
 function getQuestions(){
     let myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function(){
@@ -45,7 +48,8 @@ function getQuestions(){
             
             //Create Bullets + set questions count
             createBullets(questionsCount);
-
+            //fetch the questions
+            fetchQuestions(myData[currentIndex], questionsCount);
         }
     };
     myRequest.open('GET', './questions.json', true);
@@ -53,11 +57,12 @@ function getQuestions(){
 }
 getQuestions();
 
+
 let countSpan = document.getElementById('questions-num');
 let bulletsContainer = document.querySelector('.bullets .spans');
+
 function createBullets(num){
     countSpan.innerHTML = num;
-
     //create the bullets or spans
     for(let i = 0; i < num; i++){
         let bullet = document.createElement('span');
@@ -66,5 +71,21 @@ function createBullets(num){
             bullet.className = 'on';
         }
     }
+}
+
+
+let quizz_area = document.querySelector('.quiz');
+//get questions from json file
+function fetchQuestions(obj, count){
+
+    //set the question title
+    let questionTitle = document.createElement('h2');
+    //set the question title text
+    let questionText = document.createTextNode(obj['title']);
+    //append the text to the title
+    questionTitle.appendChild(questionText);
+    //append the title to the quizz area
+    quizz_area.appendChild(questionTitle);
+
 }
 
