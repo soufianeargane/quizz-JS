@@ -5,6 +5,7 @@ const welcome       = document.querySelector(".welcome");
 const validate      = document.querySelector(".valid-input");
 const progress_bar  = document.querySelector(".progress-bar");
 const info_list     = document.querySelector(".info_list");
+const submit_button = document.querySelector('.submit-answer');
 
 function changeName(){
     //validate the name and make sure the user has entered a name
@@ -22,7 +23,7 @@ function changeName(){
     }
 } 
 //accepting rules
-// const accept = document.getElementById("accept");
+
 // adding the check icon
 const spans = document.querySelectorAll('.step-item');
 const luck_P = document.querySelector('.good-luck');
@@ -50,6 +51,16 @@ function getQuestions(){
             createBullets(questionsCount);
             //fetch the questions
             fetchQuestions(myData[currentIndex], questionsCount);
+
+            // click on submit button
+            submit_button.onclick = function(){
+                // get right answer
+                let right_answer = myData[currentIndex].correct_answer;
+                // get user answer
+                checkAnswer(right_answer,questionsCount );
+                //increment the current question
+                currentIndex++;
+            }
         }
     };
     myRequest.open('GET', './questions.json', true);
@@ -75,6 +86,7 @@ function createBullets(num){
 
 
 let quizz_area = document.querySelector('.quiz');
+let answers_area = document.querySelector('.answers-area');
 //get questions from json file
 function fetchQuestions(obj, count){
 
@@ -87,5 +99,42 @@ function fetchQuestions(obj, count){
     //append the title to the quizz area
     quizz_area.appendChild(questionTitle);
 
+    //create the answers
+    for (let i = 1; i <=4 ; i++) {
+        //create the main div
+        let answerDiv = document.createElement('div');
+        //add class to the main div
+        answerDiv.className = 'answer';
+        //create the radio input
+        let answerRadio = document.createElement('input');
+        answerRadio.type = 'radio';
+        answerRadio.name = 'question';
+        answerRadio.id = 'answer_' + i;
+        answerRadio.dataset.answer = obj['answer_' + i];
+
+        if (i == 1) {
+            answerRadio.checked = true;
+        }
+
+        //create the label
+        let answerLabel = document.createElement('label');
+        answerLabel.htmlFor = 'answer_' + i;
+        //create the label text
+        let answerLabelText = document.createTextNode(obj['answer_' + i]);
+        //append the text to the label
+        answerLabel.appendChild(answerLabelText);
+
+        //append the radio and label to the main div
+        answerDiv.appendChild(answerRadio);
+        answerDiv.appendChild(answerLabel);
+        
+        //append the main div to the answers area
+        answers_area.appendChild(answerDiv);
+    }
+
 }
 
+function checkAnswer(correct ,count ){
+    console.log(correct);
+    console.log(count);
+}
