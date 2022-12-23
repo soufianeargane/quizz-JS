@@ -35,7 +35,7 @@
             </div>
             <div class="step">
                 <div class="step-item">
-                    <span id="quiz">2</span>
+                    <span id="quiz_icon">2</span>
                 </div>
                 <div class="step-title">
                     <p>Quiz</p>
@@ -43,7 +43,7 @@
             </div>
             <div class="step">
                 <div class="step-item">
-                    <span>3</span>
+                    <span id="result_icon">3</span>
                 </div>
                 <div class="step-title">
                     <p>Result</p>
@@ -58,11 +58,11 @@
                 <div>3.You can't select any option once time goes off.</div>
                 <div>4.You can't exit from the Quiz while you're playing.</div>
                 <div>5.You'll get points on the basis of your correct answers.</div>
-                <button onclick="check()" id="accept">accept</button>
+                <button onclick="check(), getQuestions()" id="accept">accept</button>
         </div>
         <div class="quiz-app">
             <div class="quiz-info">
-                <div class="category">Category: <span>HTML</span></div>
+                <div class="category">Category: <span>AWS</span></div>
                 <div class="count">questions Count: <strong id="questions-num"></strong></div>
             </div>
             <div class="quiz">
@@ -78,13 +78,12 @@
                     
                 </div>
                 <div class="countdown">
-                    <span class="minutes">02</span>:
-                    <span class="seconds">44</span>
+                    <!-- <span class="minutes">02</span>:
+                    <span class="seconds">44</span> -->
                 </div>
             </div>
-            <div class="result">
-                <span>Perfect</span> You got <span>8</span> out of <span>8</span>
-            </div>
+        </div>
+        <div class="result">
         </div>
     </div>
     <!-- javascript -->

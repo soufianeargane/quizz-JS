@@ -277,6 +277,7 @@ section .valid-input {
   font-weight: 700;
 }
 .info .quiz-app {
+  display: none;
   padding: 20px;
   background-color: #f8f8f8;
   width: 50%;
@@ -388,4 +389,17 @@ section .valid-input {
 }
 .info .quiz-app .bullets .spans .on {
   background-color: #03bcf4;
+}
+.info .result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 50px;
 }
