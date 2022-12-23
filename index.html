@@ -16,7 +16,7 @@
     </header>
     <section>
         <div>
-            <input id="name-input" type="text" >
+            <input class="input" placeholder="Please Type Your Name..." id="name-input" type="text" >
             <button onclick="changeName()" id="submit-name">submit</button>
         </div>
         <p class="valid-input">* Please type your name</p>
@@ -58,8 +58,10 @@
                 <div>3.You can't select any option once time goes off.</div>
                 <div>4.You can't exit from the Quiz while you're playing.</div>
                 <div>5.You'll get points on the basis of your correct answers.</div>
-                <button onclick="check(), getQuestions()" id="accept">accept</button>
-        </div>
+                <div class="accepting-buton">
+                    <button onclick="check(), getQuestions()" id="accept">accept</button>
+                </div>
+                </div>
         <div class="quiz-app">
             <div class="quiz-info">
                 <div class="category">Category: <span>AWS</span></div>

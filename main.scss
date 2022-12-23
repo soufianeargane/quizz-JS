@@ -177,6 +177,41 @@ section {
     @include breakpoints(mobile){
         margin-top: 30px;
     }
+    div{
+        .input{
+            background-color: #E6E2C3;
+            padding: 10px 20px;
+            outline: none;
+            border: none;
+            border-radius: 26px;
+            width: 250px;
+            color: #227C70;
+            font-size: 18px;
+        }
+        .input:focus{
+            border: 2px solid #227C70;
+        }
+        .input::placeholder{
+            color: #1f2e2c;
+        }
+        .input:valid{
+            border: 2px solid #227C70;
+        }
+        button{
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+            background-color: #227C70;
+            color: #E6E2C3;
+        }
+        button:hover{
+            background-color: #E6E2C3;
+            color: #227C70;
+            padding: 11px 22px;
+        }
+    }
     .valid-input{
         color: red;
         margin-top: 10px;
@@ -232,6 +267,11 @@ section {
                     background-color: #03bcf4;
                 }
             }
+            .step-title{
+                p{
+                    color:#E6E2C3 ;
+                }
+            }
         }
     }
 }
@@ -246,10 +286,11 @@ section {
         margin-top: 10px;
     }
     .info_list{
+        border-radius: 5px;
         display: none;
         padding: 20px;
         width: fit-content;
-        background-color: black;
+        background-color: #E6E2C3;
         margin: {
             left: auto;
             right: auto;
@@ -257,10 +298,28 @@ section {
 
         
         div{
-            color: #777580;
+            color: #1C315E;
             line-height: 30px;
             font-size: 20px;
             font-weight: 700;
+            padding: 5px;
+        }
+        .accepting-buton{
+            text-align: center;
+            button{
+                cursor: pointer;
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: none;
+                font-size: 18px;
+                background-color: #227C70;
+                color: #E6E2C3;
+                &:hover{
+                    background-color: #318378;
+                    color: #e7e5d1;
+                    padding: 11px 22px;
+                }
+            }
         }
     }
     .quiz-app{

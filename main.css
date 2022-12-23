@@ -170,6 +170,51 @@ section {
     margin-top: 30px;
   }
 }
+section div .input {
+  background-color: #E6E2C3;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 26px;
+  width: 250px;
+  color: #227C70;
+  font-size: 18px;
+}
+section div .input:focus {
+  border: 2px solid #227C70;
+}
+section div .input::-webkit-input-placeholder {
+  color: #1f2e2c;
+}
+section div .input::-moz-placeholder {
+  color: #1f2e2c;
+}
+section div .input:-ms-input-placeholder {
+  color: #1f2e2c;
+}
+section div .input::-ms-input-placeholder {
+  color: #1f2e2c;
+}
+section div .input::placeholder {
+  color: #1f2e2c;
+}
+section div .input:valid {
+  border: 2px solid #227C70;
+}
+section div button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  background-color: #227C70;
+  color: #E6E2C3;
+}
+section div button:hover {
+  background-color: #E6E2C3;
+  color: #227C70;
+  padding: 11px 22px;
+}
 section .valid-input {
   color: red;
   margin-top: 10px;
@@ -246,6 +291,9 @@ section .valid-input {
 .progress-bar .stepper .step .step-item:hover {
   background-color: #03bcf4;
 }
+.progress-bar .stepper .step .step-title p {
+  color: #E6E2C3;
+}
 
 .step-item-active {
   background-color: #03bcf4 !important;
@@ -261,20 +309,39 @@ section .valid-input {
   }
 }
 .info .info_list {
+  border-radius: 5px;
   display: none;
   padding: 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: black;
+  background-color: #E6E2C3;
   margin-left: auto;
   margin-right: auto;
 }
 .info .info_list div {
-  color: #777580;
+  color: #1C315E;
   line-height: 30px;
   font-size: 20px;
   font-weight: 700;
+  padding: 5px;
+}
+.info .info_list .accepting-buton {
+  text-align: center;
+}
+.info .info_list .accepting-buton button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  background-color: #227C70;
+  color: #E6E2C3;
+}
+.info .info_list .accepting-buton button:hover {
+  background-color: #318378;
+  color: #e7e5d1;
+  padding: 11px 22px;
 }
 .info .quiz-app {
   display: none;

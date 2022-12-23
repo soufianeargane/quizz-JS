@@ -6,6 +6,9 @@ const validate      = document.querySelector(".valid-input");
 const progress_bar  = document.querySelector(".progress-bar");
 const info_list     = document.querySelector(".info_list");
 const submit_button = document.querySelector('.submit-answer');
+const quizz_area = document.querySelector('.quiz');
+const answers_area = document.querySelector('.answers-area');
+const quiz_container = document.querySelector('.quiz-app');
 
 function changeName(){
     //validate the name and make sure the user has entered a name
@@ -42,6 +45,7 @@ let right_answers = 0;
 let countdowninterval;
 
 function getQuestions(){
+    quiz_container.style.display = 'block';
     let myRequest = new XMLHttpRequest();
     myRequest.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
@@ -97,7 +101,7 @@ function getQuestions(){
     myRequest.open('GET', './questions.json', true);
     myRequest.send();
 }
-getQuestions();
+// getQuestions();
 
 
 let countSpan = document.getElementById('questions-num');
@@ -116,8 +120,7 @@ function createBullets(num){
 }
 
 
-let quizz_area = document.querySelector('.quiz');
-let answers_area = document.querySelector('.answers-area');
+
 //get questions from json file
 function fetchQuestions(obj, count){
 
