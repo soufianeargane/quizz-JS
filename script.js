@@ -67,7 +67,7 @@ function getQuestions(){
             fetchQuestions(randomQuestions[currentIndex], questionsCount);
 
             //start countdown
-            countdown(5, questionsCount);
+            countdown(3500, questionsCount);
             // click on submit button
             submit_button.onclick = function(){
                 // get right answer
@@ -91,7 +91,7 @@ function getQuestions(){
 
                 //start countdown again
                 clearInterval(countdowninterval);
-                countdown(5, questionsCount);
+                countdown(500, questionsCount);
 
                 //show results
                 showResults(questionsCount);
@@ -215,7 +215,7 @@ function showResults(count){
         }else if(right_answers == count){
             theResults = `<span class="perfect">PERFECT</span>. You Answered ALL questions Correctly`;   
         }else{
-            theResults = `<span class="bad">BAD</span>. You got ${right_answers} from ${count} questions`;
+            theResults = `<span class="bad">BAD: </span>You got ${right_answers} from ${count} questions`;
         }
         result.innerHTML = theResults;
         spans[1].classList.add('step-item-active');
@@ -224,7 +224,7 @@ function showResults(count){
         quiz_icon.innerHTML = `<i class="bi bi-check-circle"></i>`;
         let result_icon = document.getElementById("result_icon");
         result_icon.innerHTML = `<i class="bi bi-check-circle"></i>`;
-
+        luck_P.innerHTML = `You Finished the test`;
         console.log(user_answers);
     }
 }

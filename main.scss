@@ -325,11 +325,18 @@ section {
     .quiz-app{
         display: none;
         padding: 20px;
-        background-color: #f8f8f8;
-        width: 50%;
+        background-color: #E6E2C3;
+        width: 60%;
         @include breakpoints(mobile){
             width: 90%;
         }
+        @include breakpoints(small){
+            width: 80%;
+        }
+        @include breakpoints(medium){
+            width: 70%;
+        }
+
         margin: {
             left: auto;
             right: auto;
@@ -339,12 +346,30 @@ section {
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #fff;
+            background-color: #1C315E;
+            color: white;
+            border-radius: 11px;
+            @include breakpoints(mobile){
+                padding:14px 10px;
+            }
         }
         .quiz{
             padding: 20px;
             background-color: #fff;
             margin-top: 15px;
+            @include breakpoints(mobile){
+                padding: 10px;
+            }
+            h2{
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+                color: #1C315E;
+                @include breakpoints(mobile){
+                    font-size: 17px;
+                }
+
+            }
         }
         .answers-area{
             background-color: #fff;
@@ -359,7 +384,10 @@ section {
                     border-bottom: 1px solid #eaeaea;
                 }
                 input[type="radio"]:checked + label{
-                    color: #03bcf4;
+                    color: #1C315E;
+                }
+                &:hover{
+                    background-color: #E6E2C3;
                 }
                 label{
                     cursor: pointer;
@@ -373,7 +401,7 @@ section {
         .button-father{
             display: flex;
             .submit-answer{
-                background-color: #03bcf4;
+                background-color: #1C315E;
                 width: 90%;
                 margin: 20px auto;
                 padding: 10px 15px;
@@ -393,15 +421,14 @@ section {
             background-color: #fff;
             display: flex;
             padding: 20px;
+            align-items: center;
             .spans{
                 display: flex;
                 flex: 1;
                 span{
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
+                    width: 25px;
+                    height: 9px;
                     background-color: #c4c0c0;
-                    margin: 0 5px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -415,10 +442,17 @@ section {
         
     }
     .result{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 50px;
+        text-align: center;
+        font-size: 30px;
+        .good{
+            color: rgb(50, 214, 50);
+        }
+        .perfect{
+            color: #03bcf4;
+        }
+        .bad{
+            color: red;
+        }
     }
 }
 
