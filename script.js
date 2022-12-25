@@ -27,6 +27,9 @@ function changeName(){
 } 
 
 
+//save correct answers in array
+
+
 // adding the check icon
 const spans = document.querySelectorAll('.step-item');
 const luck_P = document.querySelector('.good-luck');
@@ -69,10 +72,19 @@ function getQuestions(){
             //start countdown
             countdown(3500, questionsCount);
             // click on submit button
+
+            // save all correct answers and title in array
+            var correctAnswers = [];
+            var questionTitles = [];
+            for (let i = 0; i < questionsCount; i++) {
+                correctAnswers.push(randomQuestions[i].correct_answer);
+                questionTitles.push(randomQuestions[i].title);
+            }
+
             submit_button.onclick = function(){
                 // get right answer
                 let right_answer = randomQuestions[currentIndex].correct_answer;
-                
+                // correctAnswers.push(right_answer);
                 // get user answer
                 checkAnswer(right_answer,questionsCount );
                 
@@ -94,7 +106,7 @@ function getQuestions(){
                 countdown(500, questionsCount);
 
                 //show results
-                showResults(questionsCount);
+                showResults(questionsCount, correctAnswers, questionTitles);
             }
         }
     };
@@ -205,7 +217,8 @@ function handleBullets(){
 const bullet_and_time = document.querySelector('.bullets');
 const result = document.querySelector('.result');
 const quiz_app = document.querySelector('.quiz-app');
-function showResults(count){
+
+function showResults(count, correctAnswers, questionTitles){
     let theResults;
     if (currentIndex == count){
         
@@ -225,7 +238,9 @@ function showResults(count){
         let result_icon = document.getElementById("result_icon");
         result_icon.innerHTML = `<i class="bi bi-check-circle"></i>`;
         luck_P.innerHTML = `You Finished the test`;
+        console.log(questionTitles);
         console.log(user_answers);
+        console.log(correctAnswers);
     }
 }
 
