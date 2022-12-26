@@ -70,7 +70,7 @@ function getQuestions(){
             fetchQuestions(randomQuestions[currentIndex], questionsCount);
 
             //start countdown
-            countdown(3500, questionsCount);
+            countdown(30, questionsCount);
             // click on submit button
 
             // save all correct answers and title in array
@@ -104,7 +104,7 @@ function getQuestions(){
 
                 //start countdown again
                 clearInterval(countdowninterval);
-                countdown(500, questionsCount);
+                countdown(30, questionsCount);
 
                 //show results
                 showResults(questionsCount, correctAnswers, questionTitles);
@@ -241,9 +241,6 @@ function showResults(count, correctAnswers, questionTitles){
         let result_icon = document.getElementById("result_icon");
         result_icon.innerHTML = `<i class="bi bi-check-circle"></i>`;
         luck_P.innerHTML = `You Finished the test`;
-        // console.log(questionTitles);
-        // console.log(user_answers);
-        // console.log(correctAnswers);
     }
 }
 
@@ -319,7 +316,7 @@ function showStats(count, questionTitles, correctAnswers,comments){
             let commentText = document.createTextNode(comments[i]);
             comment.appendChild(commentText);
             stat.appendChild(comment);
-            
+
         }
     }
 }
