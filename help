@@ -16,3 +16,20 @@
 
 
                     <h2>Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h2>
+
+
+
+                    <div class="stat">
+                        <p class="question-num">Question Number <span>1</span> </p>
+                        <p class="questionne">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                        <p class="user-response vrai">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                        <p class="correct-response">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                        <p class="explanation">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                    </div>
+                    <div class="stat">
+                        <p class="question-num">Question Number <span>1</span> </p>
+                        <p class="questionne">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                        <p class="user-response fault">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                        <p class="correct-response">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                        <p class="explanation">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</p>
+                    </div>

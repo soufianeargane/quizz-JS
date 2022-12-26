@@ -1,12 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   background-color: #07252d;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    width: 95%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
+}
+.container .stats {
+  margin-top: 40px;
+  padding: 10px;
+}
+.container .stats .stat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.container .stats .stat .question-num {
+  color: #E6E2C3;
+}
+.container .stats .stat .questionne {
+  background-color: #E6E2C3;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 25px;
+}
+.container .stats .stat .user-response {
+  border: none;
+  padding: 5px 20px;
+  border-radius: 25px;
+}
+.container .stats .stat .vrai {
+  background-color: rgb(36, 231, 36);
+}
+.container .stats .stat .fault {
+  background-color: rgb(231, 36, 36);
+}
+.container .stats .stat .correct-response {
+  background-color: rgb(112, 156, 223);
+  border: none;
+  padding: 5px 20px;
+  border-radius: 25px;
+}
+.container .stats .stat .explanation {
+  background-color: #E6E2C3;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 25px;
 }
 
 header .title {
@@ -497,6 +566,7 @@ section .valid-input {
 .info .result {
   text-align: center;
   font-size: 30px;
+  color: white;
 }
 .info .result .good {
   color: rgb(50, 214, 50);

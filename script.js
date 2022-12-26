@@ -76,9 +76,11 @@ function getQuestions(){
             // save all correct answers and title in array
             var correctAnswers = [];
             var questionTitles = [];
+            var comments = [];
             for (let i = 0; i < questionsCount; i++) {
                 correctAnswers.push(randomQuestions[i].correct_answer);
                 questionTitles.push(randomQuestions[i].title);
+                comments.push(randomQuestions[i].comment);
             }
 
             submit_button.onclick = function(){
@@ -90,7 +92,6 @@ function getQuestions(){
                 
                 //increment the current question
                 currentIndex++;
-
                 //remove the old question
                 quizz_area.innerHTML = '';
                 answers_area.innerHTML = '';
@@ -107,6 +108,8 @@ function getQuestions(){
 
                 //show results
                 showResults(questionsCount, correctAnswers, questionTitles);
+
+                showStats(questionsCount, questionTitles,correctAnswers,comments);
             }
         }
     };
@@ -223,10 +226,10 @@ function showResults(count, correctAnswers, questionTitles){
     if (currentIndex == count){
         
         quiz_app.remove();
-        if (right_answers > (count / 2) && (right_answers < count)) {
-            theResults = `<span class="good">GOOD</span>. You got ${right_answers} from ${count} questions`;
+        if (right_answers >= (count / 2) && (right_answers < count)) {
+            theResults = `<span class="good">GOOD:</span> You got ${right_answers} from ${count} questions`;
         }else if(right_answers == count){
-            theResults = `<span class="perfect">PERFECT</span>. You Answered ALL questions Correctly`;   
+            theResults = `<span class="perfect">PERFECT:</span> You Answered ALL questions Correctly`;   
         }else{
             theResults = `<span class="bad">BAD: </span>You got ${right_answers} from ${count} questions`;
         }
@@ -238,9 +241,9 @@ function showResults(count, correctAnswers, questionTitles){
         let result_icon = document.getElementById("result_icon");
         result_icon.innerHTML = `<i class="bi bi-check-circle"></i>`;
         luck_P.innerHTML = `You Finished the test`;
-        console.log(questionTitles);
-        console.log(user_answers);
-        console.log(correctAnswers);
+        // console.log(questionTitles);
+        // console.log(user_answers);
+        // console.log(correctAnswers);
     }
 }
 
@@ -266,4 +269,57 @@ function countdown(duration, count){
     }
 }
 
-// add sound when seconds are less than
+//show questions, ansewrs and the mistakes
+const stats = document.querySelector(".stats")
+function showStats(count, questionTitles, correctAnswers,comments){
+    if(currentIndex == count){
+        for(let i = 0; i<count;i++){
+            let stat = document.createElement('div');
+            stat.className = 'stat';
+            stats.appendChild(stat);
+
+            // create the p that contains the question number
+            let questionNum = document.createElement('p');
+            questionNum.className = 'question-num';
+            let questionNumText = document.createTextNode('Question Number'+ (i+1));
+            questionNum.appendChild(questionNumText);
+            stat.appendChild(questionNum);
+
+            //create the p that contains the question 
+            let question = document.createElement('p');
+            question.className = 'questionne';
+            let questionText = document.createTextNode(questionTitles[i]);
+            question.appendChild(questionText);
+            stat.appendChild(question);
+            
+
+            //create the p that contains the user answer
+            let userAnswer = document.createElement('p');
+            userAnswer.className = 'user-response';
+            let userAnswerText = document.createTextNode(user_answers[i]);
+            userAnswer.appendChild(userAnswerText);
+            stat.appendChild(userAnswer);
+            // add class correst or wrong to the user answer
+            if(user_answers[i] === correctAnswers[i]){
+                userAnswer.classList.add('vrai');
+            }else{
+                userAnswer.classList.add('fault');
+            }
+
+            //create the p that contains the correct answer
+            let correctAnswer = document.createElement('p');
+            correctAnswer.className = 'correct-response';
+            let correctAnswerText = document.createTextNode(correctAnswers[i]);
+            correctAnswer.appendChild(correctAnswerText);
+            stat.appendChild(correctAnswer);
+
+            //create the p that contains the comment
+            let comment = document.createElement('p');
+            comment.className = 'explanation';
+            let commentText = document.createTextNode(comments[i]);
+            comment.appendChild(commentText);
+            stat.appendChild(comment);
+            
+        }
+    }
+}
