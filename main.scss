@@ -386,7 +386,8 @@ section {
         background-color: #E6E2C3;
         width: 60%;
         @include breakpoints(mobile){
-            width: 90%;
+            width: 98%;
+            padding: 5px;
         }
         @include breakpoints(small){
             width: 80%;
